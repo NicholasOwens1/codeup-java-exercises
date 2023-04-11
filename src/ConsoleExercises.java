@@ -4,8 +4,8 @@ public class ConsoleExercises {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         in.useDelimiter("\n");
-//        double pi = 3.14159;
-//        System.out.printf("The value of pi is approximate ely %1.2f%n", pi );
+        double pi = 3.14159;
+        System.out.printf("The value of pi is approximate ely %.2f%n", pi );
 //        System.out.println("enter an integer");
 //        int enteredInt = Integer.parseInt(in.next());
 //        System.out.println("enter 3 words");
