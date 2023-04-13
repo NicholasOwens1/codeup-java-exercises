@@ -31,7 +31,6 @@ public class ControlFlowExercises {
                 System.out.println("FizzBuzz");
             } else if (num % 5 == 0) {
                 System.out.println("buzz");
-                ;
             } else if (num % 3 == 0) {
                 System.out.println("fizz");
             } else {
