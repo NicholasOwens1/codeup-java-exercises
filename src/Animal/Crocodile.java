@@ -30,11 +30,11 @@ public class Crocodile {
 
 
 
-//    public static void main(String[] args) {
-//        Animal.Crocodile KRool = new Animal.Crocodile();
+    public static void main(String[] args) {
+//        Animal.Crocodile KRool = new Crocodile();
 //        KRool.name = "King K. Rool";
 //        KRool.sound = "Punch";
 //        System.out.println(KRool.makeNoise());
-//    }
+    }
 
 }
