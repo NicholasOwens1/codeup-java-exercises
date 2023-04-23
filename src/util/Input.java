@@ -10,7 +10,7 @@ public class Input {
          this.scanner = new Scanner(System.in);
      }
 
-     public String getString(String prompt){
+     public String getString(String string){
          System.out.println("Enter something");
          return scanner.nextLine();
      }
@@ -47,21 +47,25 @@ public class Input {
         System.out.println("Enter a decimal number");
         return scanner.nextDouble();
     }
-    double getDouble(double min, double max){
-//        set up scanner
-        this.scanner = new Scanner(System.in);
-//        ask user for number
-        System.out.println("enter an integer between " + min + " and " + max);
+//    double getDouble(double min, double max){
+////        set up scanner
+//        this.scanner = new Scanner(System.in);
+////        ask user for number
+//        System.out.println("enter an integer between " + min + " and " + max);
+//        String userInput = getString();
+//        try {
+//            Double.valueOf(userInput);
+//        }
 //        assign variable to user's answer
-        double answer = scanner.nextDouble();
-        while (answer < min || answer > max) {
-            System.out.println("enter a number between " + min + " and " + max);
-            answer = scanner.nextDouble();
-        }
-        System.out.println("Great job! Here is your number.\n");
-        return answer;
+//        double answer = scanner.nextDouble();
+//        while (answer < min || answer > max) {
+//            System.out.println("enter a number between " + min + " and " + max);
+//            answer = scanner.nextDouble();
+//        }
+//        System.out.println("Great job! Here is your number.\n");
+//        return answer;
     }
 
 
 
-        }
+//        }

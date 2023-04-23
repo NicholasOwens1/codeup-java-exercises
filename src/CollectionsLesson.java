@@ -19,7 +19,9 @@ public class CollectionsLesson {
         roasts.add("medium");
         roasts.add("dark");
 
-//        System.out.println(roasts.isEmpty()); // output whether the list is empty or not.
+        System.out.println(roasts.isEmpty()); // output whether the list is empty or not.
+        ArrayList<Integer> emptyList = new ArrayList<>(); //Create an empty ArrayList of any type.
+        System.out.println(emptyList.isEmpty()); // Output whether this new ArrayList is empty.
     }
 }
 
