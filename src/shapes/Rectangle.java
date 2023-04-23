@@ -34,5 +34,12 @@ public class Rectangle {
         public Square(int side) {
             super(side, side);
         }
+        public int getArea() {
+            return 4 * getWidth();
+        }
+
+        public int getPerimeter() {
+            return getWidth() ^ 2;
+        }
     }
 }
