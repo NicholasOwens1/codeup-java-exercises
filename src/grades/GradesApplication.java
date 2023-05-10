@@ -1,35 +1,78 @@
 package grades;
-import java.util.Scanner;
-import java.util.Set;
-
-import java.util.HashMap;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class GradesApplication {
+    // Create a method that outputs student info
+    public static void outputStudentInfo(String userInput, HashMap<String, Student> students){
+//        if the input matches one of the keys in the students HashMap, assign a Student object to the value attached to the key that matches the input.
+        if (students.containsKey(userInput)){
+            Student student = students.get(userInput);
+            System.out.printf("Name: %s, Username: %s%n, GPA: %.1f%n", student.getName(), userInput, student.getGradeAverage());
+        } else {
+            System.out.println("No user with that username was found.");
+        }
+    }
+    public static void seeAnotherUser(String response) {
+        System.out.println("Would you like to see another student?");
+    }
+
     public static void main(String[] args) {
-        Student student1 = new Student("Jake");
+
+
         HashMap<String, Student> students = new HashMap<>();
-        Student student2 = new Student("FreddyFazbore");
-        Student student3 = new Student("InsideOutBoy");
-        Student student4 = new Student("MiseryBusiness");
-        student1.addGrade(82.4F);
-        student1.addGrade(23.4F);
-        student1.addGrade(99.99F);
-        student2.addGrade(78.32F);
-        student2.addGrade(98.12F);
-        student2.addGrade(91.23F);
-        student3.addGrade(70.00F);
-        student3.addGrade(110.00F);
-        student3.addGrade(100.00F);
-        student4.addGrade(70.00F);
-        student4.addGrade(80.00F);
-        student4.addGrade(90.00F);
-        student4.addGrade(100.00F);
-        students.put(student1.getName(), student1);
-        students.put(student2.getName(), student2);
-        students.put(student3.getName(), student3);
-        students.put(student4.getName(), student4);
-        System.out.println(students.keySet());
-        System.out.println("Which student would you like information about?");
-//        Scanner scanner = new Scanner();
+        Student Jake = new Student("JakeKicks");
+        Student Mikey = new Student("FreddyFazbore");
+        Student Elizabeth = new Student("InsideOutBoy");
+        Student Alejandro = new Student("MiseryBusiness");
+        students.put("FreddyFazbore", Mikey);
+        students.put("JakeKicks", Jake);
+        students.put("InsideOutBoy", Elizabeth);
+        students.put("MiseryBusiness", Alejandro);
+        Jake.addGrade(82);
+        Jake.addGrade(23);
+        Jake.addGrade(99);
+        Mikey.addGrade(78);
+        Mikey.addGrade(98);
+        Mikey.addGrade(91);
+        Elizabeth.addGrade(70);
+        Elizabeth.addGrade(110);
+        Elizabeth.addGrade(100);
+        Alejandro.addGrade(70);
+        Alejandro.addGrade(80);
+        Alejandro.addGrade(90);
+        Alejandro.addGrade(100);
+
+        System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        Set<String> userNames = students.keySet();
+        System.out.println(userNames);
+        System.out.println("Which student would you like information about? Enter one of the usernames above.");
+        String userInput = scanner.nextLine();
+        outputStudentInfo(userInput, students);
+        while (true){
+            System.out.println("Would you like to see another student? (yes/no)");
+            String userChoice = scanner.nextLine().toLowerCase();
+            if (userChoice.equals("no") || userChoice.equals("n")){
+                System.out.println("Goodbye, and have a wonderful day!");
+                break;
+            } else {
+                System.out.println("What student would you like to see  more information on?");
+                System.out.println(userNames);
+                System.out.println("");
+                userInput = scanner.nextLine();
+                outputStudentInfo(userInput, students);
+            }
+//        Scanner scanner = new Scanner(System.in);
+//        Set<String> userNames = students.keySet();
+//        System.out.println(userNames);
+//        System.out.println("Which student would you like information about? Enter one of the usernames above.");
+//        String input = scanner.nextLine();
+//        if (Objects.equals(input, Jake.getName()) || Objects.equals(input, Elizabeth.getName()) ||
+//                Objects.equals(input, Alejandro.getName()) || Objects.equals(input, Mikey.getName()))
+//        {
+        }
+
+
     }
 }
